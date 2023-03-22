@@ -6,6 +6,7 @@
 
 void bubbleSort(int *nums, int size)
 {
+    int totalSwaps = 0;
     for (int i = 0; i < size - 1; i++)
     {
         int swaps = 0;
@@ -17,10 +18,12 @@ void bubbleSort(int *nums, int size)
                 nums[j] = nums[j + 1];
                 nums[j + 1] = temp;
                 swaps++;
+                totalSwaps++;
             }
         }
         printf("pass #%d: %d\n", i + 1, swaps);
     }
+    printf("Total Swaps: %d\n", totalSwaps);
 }
 
 int main(void)
@@ -29,6 +32,7 @@ int main(void)
     int arr[] = {97, 16, 45, 63, 13, 22, 7, 58, 72};
     int *ptr = arr; 
     bubbleSort(ptr, size);
+
     printf("Sorted Array: ");
 
     for (int i = 0; i < size; i++)
